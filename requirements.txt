@@ -1,0 +1,5 @@
+pandas
+meteostat
+scikit-learn
+joblib
+matplotlib
