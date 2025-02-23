@@ -3,3 +3,5 @@ meteostat
 scikit-learn
 joblib
 matplotlib
+tabulate
+seaborn
