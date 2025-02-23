@@ -16,14 +16,18 @@ def fetch_meteostat_data(lat, lon, days=30):
     data = data.fetch()
     
     if not data.empty:
+        # Nếu có sẵn, thêm wind_direction
         data = data.rename(columns={
             'temp': 'temperature',
             'rhum': 'humidity',
             'wspd': 'wind_speed',
+            'wdir': 'wind_direction',
             'pres': 'pressure',
             'prcp': 'rain'
         })
-        data = data[['temperature', 'humidity', 'wind_speed', 'pressure', 'rain']].dropna()
+        # Chọn các cột cần thiết (loại bỏ nếu không tồn tại)
+        available_cols = list(set(['temperature', 'humidity', 'wind_speed', 'pressure', 'rain', 'wind_direction']) & set(data.columns))
+        data = data[available_cols].dropna()
         data.index.name = 'timestamp'
         return data
     return None
@@ -39,7 +43,7 @@ def save_data(city, data):
 
 def collect_data_for_city(city, days=30):
     """
-    Lấy dữ liệu thời tiết cho một thành phố từ file cities_vn.json
+    Lấy dữ liệu thời tiết cho một thành phố từ file cities_vn.json.
     """
     with open("cities_vn.json", "r", encoding="utf-8") as f:
         cities = json.load(f)
