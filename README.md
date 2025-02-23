@@ -28,10 +28,6 @@ Dự án này cung cấp hệ thống dự báo thời tiết dựa trên dữ l
 
 1. Tạo môi trường ảo trong thư mục dự án:
 
-   ```sh
-   python -m venv env
-   ```
-
 2. Kích hoạt môi trường:
 
 - Trên Windows:
@@ -48,33 +44,34 @@ Dự án này cung cấp hệ thống dự báo thời tiết dựa trên dữ l
 
 ### Cài Đặt Các Gói
 
-Trong thư mục dự án, chạy lệnh sau để cài đặt các gói cần thiết:
+- Trong thư mục dự án, chạy lệnh sau để cài đặt các gói cần thiết:
+
     ```sh
     pip install -r requirements.txt
     ```
 
-### Cách Sử Dụng
+## Cách Sử Dụng
 
-#### Thu Thập Dữ Liệu
+### Thu Thập Dữ Liệu
 
--Chạy script data_collection.py để lấy dữ liệu thời tiết từ API Meteostat dựa trên thông tin trong file cities_vn.json:
+- Chạy script [`data_collection.py`](modules/data_collection.py) để lấy dữ liệu thời tiết từ API Meteostat dựa trên thông tin trong file **cities_vn.json**
 
--Xử Lý Dữ Liệu:
--Chạy script data_processing.py để tổng hợp dữ liệu theo ngày, tính toán các feature bổ sung và xử lý ngoại lệ:
+- Xử Lý Dữ Liệu:
+- Chạy script [`data_processing.py`](modules/data_collection.py) để tổng hợp dữ liệu theo ngày, tính toán các feature bổ sung và xử lý ngoại lệ
 
--Huấn Luyện và Đánh Giá Mô Hình:
--Chạy script model_training.py để chuẩn bị dữ liệu huấn luyện, huấn luyện và đánh giá mô hình:
+- Huấn Luyện và Đánh Giá Mô Hình:
+- Chạy script [`model_training.py`](modules/data_collection.py) để chuẩn bị dữ liệu huấn luyện, huấn luyện và đánh giá mô hình
 
--Dự Báo:
--Sử dụng module prediction.py hoặc chạy giao diện trong main.py để dự báo kết quả:
+- Dự Báo:
+- Sử dụng module [`prediction.py`](modules/data_collection.py) hoặc chạy giao diện trong **main.py** để dự báo kết quả:
 
--Trực Quan Hóa:
--Dùng script visualization.py để hiển thị biểu đồ dự báo, đánh giá hiệu năng mô hình và các biểu đồ trực quan khác:
+- Trực Quan Hóa:
+- Dùng script [`visualization.py`](modules/data_collection.py) để hiển thị biểu đồ dự báo, đánh giá hiệu năng mô hình và các biểu đồ trực quan khác
 
 ## Lưu Ý
 
--Đảm bảo rằng dữ liệu gốc đã được thu thập đúng cách và lưu trữ trong thư mục data trước khi tiến hành xử lý dữ liệu.
--Nếu gặp lỗi thiếu file dữ liệu xử lý theo ngày (như Hà Nội_daily_weather.csv), hãy chạy lại data_processing.py để tạo file cần thiết.
+- Đảm bảo rằng dữ liệu gốc đã được thu thập đúng cách và lưu trữ trong thư mục data trước khi tiến hành xử lý dữ liệu.
+- Nếu gặp lỗi thiếu file dữ liệu xử lý theo ngày (vd: [`Cà Mau_weather.csv`](data/Cà%20Mau_weather.csv)), hãy chạy lại [`data_processing.py`](modules/data_collection.py) để tạo file cần thiết.
 
 ## License
 
@@ -82,5 +79,5 @@ Trong thư mục dự án, chạy lệnh sau để cài đặt các gói cần t
 
 ## Cảm Ơn
 
--Dữ liệu thời tiết được cung cấp thông qua API Meteostat.
--Các biểu đồ trực quan được thực hiện nhờ Matplotlib, Seaborn, và pandas.
+- Dữ liệu thời tiết được cung cấp thông qua API Meteostat.
+- Các biểu đồ trực quan được thực hiện nhờ Matplotlib, Seaborn, và pandas.
