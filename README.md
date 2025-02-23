@@ -68,6 +68,14 @@ Dự án này cung cấp hệ thống dự báo thời tiết dựa trên dữ l
 - Trực Quan Hóa:
 - Dùng script [`visualization.py`](modules/data_collection.py) để hiển thị biểu đồ dự báo, đánh giá hiệu năng mô hình và các biểu đồ trực quan khác
 
+## Chạy chương trình chính
+
+- Khởi động chương trình bằng lệnh này để sử dụng model:
+
+    ```sh
+    python main.pypy
+    ```
+
 ## Lưu Ý
 
 - Đảm bảo rằng dữ liệu gốc đã được thu thập đúng cách và lưu trữ trong thư mục data trước khi tiến hành xử lý dữ liệu.
