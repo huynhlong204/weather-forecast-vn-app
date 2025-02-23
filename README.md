@@ -73,7 +73,7 @@ Dự án này cung cấp hệ thống dự báo thời tiết dựa trên dữ l
 - Khởi động chương trình bằng lệnh này để sử dụng model:
 
     ```sh
-    python main.pypy
+    python main.py
     ```
 
 ## Lưu Ý
